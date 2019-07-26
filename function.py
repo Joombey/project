@@ -59,8 +59,6 @@ class SQL:
         cur.execute("SELECT (daily_res) FROM %s WHERE data = %s" %(self.User, str(datetime.datetime.now())[:10]))
         for i in cur: 
             daily_res_send = i[0]
-            print(daily_res_send)
-           # print(daily_res_send)
         if cur.fetchall() == (): daily_res_send = 'Неполный ввод'
         self.close_conn(conn, cur)
         return daily_res_send
