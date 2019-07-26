@@ -1,14 +1,8 @@
-'''import sqlite3 as sql
-conn = sql.connect("db_db.sqlite")
-cur = conn.cursor()
-def execute():
-    cur.execute("CREATE TABLE IF NOT %s (id INTEGER,  )")'''
-
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.utils import get_random_id
 from vk_bot import vkbot
-import function as func
+from function import SQL
 
 def msg(user_id, Message):
     vk.messages.send(user_id = event.user_id, random_id = get_random_id(), message = Message)    
@@ -23,3 +17,4 @@ for event in longpoll.listen():
     if event.type == VkEventType.MESSAGE_NEW and event.text and event.to_me and event.from_user:
         bot = vkbot(event.user_id)
         msg(event.user_id, bot.new_msg(event.text))
+
